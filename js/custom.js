@@ -68,3 +68,27 @@ $(".client_owl-carousel").owlCarousel({
         }
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const swiper = new Swiper(".portfolio-swiper", {
+    slidesPerView: 3,
+    spaceBetween: 16,
+    grid: {
+      rows: 2,
+      fill: "row",
+    },
+
+    grabCursor: true,
+
+    // 🔥 FIX CLICK
+    preventClicks: false,
+    preventClicksPropagation: false,
+    touchStartPreventDefault: false,
+
+    breakpoints: {
+      0: { slidesPerView: 1.2 },
+      768: { slidesPerView: 2.2 },
+      1024: { slidesPerView: 3.2 },
+    },
+  });
+});

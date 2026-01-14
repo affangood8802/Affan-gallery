@@ -96,7 +96,6 @@ a:focus {
 /*header section*/
 .hero_area {
   position: relative;
-  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -104,6 +103,17 @@ a:focus {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+   background: none;
+   padding: 0;
+   margin: 0;
+   background: none !important; /* Removes any solid background colors */
+    margin: 0 !important;
+    display: flex;
+    flex-direction: column;
+	background: url("bg.jpg") center / cover no-repeat;
+	padding-top: 80px;
+   display: grid;
+   place-items: center;
 }
 
 .bg-box {
@@ -136,6 +146,7 @@ a:focus {
 .hero-content {
     position: relative;
     display: flex;
+	flex: 1;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -164,12 +175,14 @@ a:focus {
 }
 
 .header_section {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+
   padding: 15px 0;
-  position: fixed; /* Or use 'sticky' */
-    top: 0;
-    width: 100%;
-    z-index: 999; /* Ensures it stays above other content */
-    background-color: rgba(255, 255, 255, 0.1); 
+  background-color: rgba(255, 255, 255, 0.1);
+	
 }
 
 .back-text {
@@ -625,87 +638,70 @@ a:focus {
 }
 
 
-.food_section .box .detail-box {
-  padding: 25px;
+.portfolio {
+  padding: 60px 40px;
 }
 
-.food_section .box .detail-box h5 {
-  font-weight: 600;
+.portfolio {
+  padding: 60px 40px;
 }
 
-.food_section .box .detail-box p {
-  font-size: 15px;
+.portfolio h2 {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-.food_section .box .detail-box h6 {
-  margin-top: 10px;
+.portfolio-item {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 16px;
 }
 
-.food_section .box .options {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.item-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.65), rgba(0,0,0,0));
+  opacity: 0;
+  transition: opacity .3s ease;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: flex-end;
+  padding: 14px;
 }
 
-.food_section .box .options a {
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  background: #BEF709;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-		  
+.portfolio-item:hover .item-overlay {
+  opacity: 1;
 }
 
-.food_section .box .options a svg {
-  width: 18px;
-  height: auto;
-  fill: #141414;
+.item-title {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
 }
 
-.food_section .box:hover .img-box img {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+.portfolio-swiper {
+  width: 100%;
+  padding-bottom: 20px;
 }
 
-.food_section .box:hover .img-box .bt-logo img {
-  -webkit-transform: none !important;
-          transform: none !important;
+.swiper-slide {
+  pointer-events: auto;
 }
 
-.food_section .btn-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 45px;
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
 }
 
-.food_section .btn-box a {
-  display: inline-block;
-  padding: 10px 55px;
-  background-color: #BEF709;
-  color: #141414;
-  border-radius: 45px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  border: none;
+.swiper-slide a {
+  display: block;
 }
 
-.food_section .btn-box a:hover {
-  background-color: #98BA0C;
+/* jarak antar item */
+.swiper-wrapper {
+  row-gap: 16px;
 }
 
 .about_section {
