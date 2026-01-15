@@ -224,6 +224,23 @@ a:focus {
   padding: 0;
 }
 
+.whatsapp_link i {
+  color: #25D366; /* Official WhatsApp Green */
+  font-size: 24px;
+  margin-right: 15px;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp_link i:hover {
+  transform: scale(1.2); /* Slight pop effect on hover */
+}
+
+.user_option a i.fa-whatsapp {
+    font-size: 18px; /* Adjust this number (16px - 20px) to match LinkedIn/Instagram exactly */
+    vertical-align: middle;
+    margin-right: 15px; /* Keeps consistent spacing between icons */
+}
+
 .custom_nav-container .navbar-nav {
   padding-left: 18%;
 }
